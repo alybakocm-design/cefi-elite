@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/cormorant-garamond";
+import "@fontsource-variable/plus-jakarta-sans";
 import "@fontsource-variable/source-sans-3";
 import "@fontsource/amiri/400.css";
 import "./globals.css";

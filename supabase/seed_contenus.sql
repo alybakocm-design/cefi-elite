@@ -61,3 +61,9 @@ where l.is_demo and p.slug = 'exemple-langue-arabe-1' and s.program_id = p.id an
 insert into public.faqs (question, answer, sort_order, is_demo) values
  ('Comment s''inscrire ?', 'Remplissez le formulaire d''inscription en ligne ; le secrétariat vous recontacte pour finaliser le dossier. (Réponse provisoire à valider.)', 1, true),
  ('Puis-je suivre une formation à distance ?', 'Oui : l''académie en ligne et les formations accompagnées à distance ouvriront progressivement. (Réponse provisoire à valider.)', 2, true);
+
+insert into public.settings (key, label, value, is_placeholder) values
+ ('site.hero_title', 'Titre de la bannière', '"Apprenez la science islamique avec rigueur et excellence."', true),
+ ('site.hero_subtitle', 'Sous-titre de la bannière', '"Coran, langue arabe, fiqh, aqida, sira : des formations encadrées par des enseignants, au centre à Bamako ou en ligne, à votre rythme."', true),
+ ('site.hero_image', 'Photo de la bannière (URL, laisser vide pour l''illustration)', '""', true)
+on conflict (key) do nothing;
