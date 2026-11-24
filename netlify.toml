@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Clés PUBLIQUES Supabase : conçues pour le navigateur, la sécurité repose sur les règles d'accès (RLS).
+# La clé secrète service_role ne doit JAMAIS figurer ici : la définir dans les variables d'environnement Netlify.
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_PUBLIC_SUPABASE_URL = "https://ndnuzlekmgbzzkrkwqbq.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_GIso7RjugBS0dhCqXWqtPQ_Orpli8Zh"
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
